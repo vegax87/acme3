@@ -7,12 +7,12 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego/plugins/auth"
-	_ "github.com/mattn/go-sqlite3"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func init() {
-	orm.RegisterDriver("sqlite", orm.DR_Sqlite)
-	orm.RegisterDataBase("default", "sqlite3", "acme.db")
+	orm.RegisterDriver("mysql", orm.DR_MySQL)
+	orm.RegisterDataBase("default", "mysql", "root:root@/acme3?charset=utf8")
 	name := "default"
 	force := false
 	verbose := false
